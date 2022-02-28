@@ -1,0 +1,38 @@
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/variables';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $bg-primary;
+  //background-color: #30303D;
+  z-index: 1;
+
+  &__main {
+    height: 300px;
+    width: 100%;
+    background-color: #3E3F53;
+    //z-index: 22;
+  }
+
+  &__copy {
+    //background-color: rgb(62, 63, 82);
+    background-color: #3E3F53;
+    background-color: #52525E;
+    width: 100%;
+    text-align: center;
+    padding: 12px 10px;
+    font-size: 14px;
+    color: $color-gray;
+
+    @include lg-screen {
+      padding: 20px 10px;
+    }
+
+    span {
+      font-weight: bold;
+      color: $text-primary;
+    }
+  }
+}

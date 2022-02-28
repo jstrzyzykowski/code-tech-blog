@@ -1,0 +1,138 @@
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/variables';
+
+.articleListItem {
+  display: flex;
+  //flex-direction: column;
+  color: $text-primary;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  //background-color: #58596A;
+  box-shadow: 0 0 5px 1px #282830;
+  height: 200px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.1);
+    //box-shadow: inset 0 0 10px 1px #58596B;
+    z-index: 1;
+  }
+
+  &:hover {
+    .articleListItem__imageContainer {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+
+  &__imageContainer {
+    height: $article-item-height;
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    height: 100%;
+    width: 60%;
+
+    @include lg-screen {
+      height: $article-item-height-lg;
+    }
+
+    &-filter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      //background-color: rgba(255,255,255,0.1);
+      z-index: 1;
+    }
+
+    img {
+      transition: transform 0.2s ease-out;
+    }
+  }
+
+  &__body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    //background-color: rgb(37, 39, 55);
+    //background-color: rgba(255,255,255,0.1);
+    //background-image: ;
+    //background-color: #52525E;
+    //background: rgb(88,89,106);
+    background: linear-gradient(110deg, rgba(82, 82, 94,1) 50%, rgba(82, 82, 94,0) 70%);
+    background: linear-gradient(110deg, rgba(88,89,106,1) 50%, rgba(88,89,106,0) 70%);
+    transition: background-color 150ms ease-out;
+
+    @include lg-screen {
+      padding: 20px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../../assets/logo-bg.png');
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: contain;
+      opacity: 0.7;
+      z-index: -1;
+    }
+
+    &-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 16px;
+      //flex-grow: 1;
+      color: $text-primary;
+      transition: color 150ms ease-out;
+    }
+
+    &-desc {
+      display: flex;
+      flex-wrap: wrap;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        font-size: $font-size-small;
+        margin-right: $post-stat-margin-right;
+        color: $color-gray;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 2px 6px;
+        margin-bottom: 6px;
+        transition: background-color 150ms ease-out;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@mixin sm-screen {
+  @media (min-width: 768px) { @content; }
+}
+
+@mixin md-screen {
+  @media (min-width: 1021px) { @content; }
+}
+
+@mixin lg-screen {
+  @media (min-width: 1171px) { @content; }
+}
+
+@mixin adminPanelIconButtonStyles($bgColor) {
+  width: 34px;
+  height: 34px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: $bgColor;
+  border: none;
+  color: whitesmoke;
+  //text-shadow: 0 1px 2px #2e3042;
+  transition: background-color 0.1s ease-out;
+
+  &:hover {
+    background-color: darken($bgColor, 2);
+  }
+}

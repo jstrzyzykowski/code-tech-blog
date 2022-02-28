@@ -1,0 +1,32 @@
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/variables';
+
+.loginModal {
+  &__newAccount {
+    color: $text-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 30px;
+    
+    &-text {
+      margin-right: 10px;
+    }
+
+    &-button {
+      padding: 6px 8px;
+      border: none;
+      background-color: #77C900;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      //text-shadow: 0 1px 3px #2e3042;
+      transition: background-color 0.1s ease-out;
+
+      &:hover {
+        background-color: darken(#77C900, 4);
+      }
+    }
+  }
+}

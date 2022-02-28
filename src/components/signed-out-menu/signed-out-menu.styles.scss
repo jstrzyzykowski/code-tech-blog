@@ -1,0 +1,31 @@
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/variables';
+
+.signedOutMenu {
+  height: 40px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  cursor: pointer;
+  background-color: #35374A;
+  background-color: #2E2E3A;
+  color: $text-primary;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 150ms ease-out;
+
+  &:hover {
+    background-color: lighten($color: #2E2E3A, $amount: $hover-changer-value);
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  i {
+    padding-left: 6px;
+    font-size: 21px;
+  }
+}

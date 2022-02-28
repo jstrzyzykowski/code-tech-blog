@@ -1,0 +1,12 @@
+@import '../../sass/utilities/variables';
+
+.signedOutComment {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: $color-violet;
+  color: whitesmoke;
+
+  span {
+    font-weight: bold;
+  }
+}

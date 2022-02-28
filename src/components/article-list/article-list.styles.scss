@@ -1,0 +1,26 @@
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/variables';
+
+.articleList {
+
+  &__list {
+    display: grid;
+    row-gap: 10px;
+
+    @include sm-screen {
+      grid-template-columns: auto;
+      column-gap: 10px;
+      row-gap: 10px;
+    }
+
+    @include lg-screen {
+      //column-gap: 10px;
+      row-gap: 20px;
+      grid-template-columns: 1fr;
+    }
+
+    &.empty {
+      grid-template-columns: auto;
+    }
+  }
+}

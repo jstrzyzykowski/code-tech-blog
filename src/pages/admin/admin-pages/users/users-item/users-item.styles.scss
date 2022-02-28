@@ -1,0 +1,74 @@
+@import "../../../../../sass/utilities/mixins";
+
+.user {
+  //display: grid;
+  //grid-template-columns: 50px 1fr 1fr 1fr 1fr auto;
+  background-color: rgba(255,255,255,0.05);
+  box-shadow: 0 0 3px 1px #282830;
+
+  //padding-right: 5px;
+  align-items: center;
+  font-size: 14px;
+  //padding: ;
+
+  &__header {
+    display: flex;
+    height: 50px;
+
+    &-index {
+      background-color: #575869;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+    }
+
+    &-id {
+      flex-grow: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      background-color: #3D3D49;
+      padding-left: 10px;
+    }
+  }
+
+  &__content {
+    padding: 10px;
+
+    &-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      //height: 30px;
+      background-color: rgba(0,0,0,0.1);
+      padding: 5px;
+
+      &:nth-of-type(odd) {
+        background-color: rgba(255,255,255,0.1);
+      }
+    }
+
+    &-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+
+      button {
+        margin-right: 5px;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+
+      &-button {
+        @include adminPanelIconButtonStyles(#6D60D3);
+      }
+
+      &-button--remove {
+        @include adminPanelIconButtonStyles(#F55D6C);
+      }
+    }
+  }
+}

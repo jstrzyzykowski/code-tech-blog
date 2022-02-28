@@ -1,0 +1,32 @@
+.panelDiscord {
+  background-color: #7A8CDD;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //box-shadow: 0 0 4px 1px rgba(255,255,255,0.2);
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.1s ease-out;
+
+  &:hover {
+    box-shadow: 0 0 14px 1px rgba(255,255,255,0.2);
+    background-color: darken(#7A8CDD, 3);
+
+    .panelDiscord__imageWrapper {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+
+
+  &__imageWrapper {
+    height: 60px;
+
+    img {
+      transition: transform 0.1s ease-out;
+    }
+  }
+}

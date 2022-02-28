@@ -1,0 +1,65 @@
+@import "../../sass/utilities/variables";
+@import "../../sass/utilities/mixins";
+
+.sectionWrapper {
+  box-shadow: 0 0 4px 2px #222338;
+  box-shadow: 0 0 6px 2px #282830;
+  background-color: #2E3041;
+  //background-color: #656570;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    color: whitesmoke;
+
+    i {
+      font-size: 28px;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #2E3041;
+      background-color: #3e3e4c;
+    }
+
+    &-title {
+      background-color: #585968;
+      background-color: #656570;
+      text-transform: uppercase;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 10px;
+    }
+  }
+
+  &__content {
+    padding: 10px;
+    background-image: url("https://i.ibb.co/kQTZN40/nw-icon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $bg-light;
+    background-color: #3e3e4c;
+    background-blend-mode: multiply;
+    overflow: hidden;
+    flex-grow: 1;
+    //z-index: 1;
+
+    @include lg-screen {
+      padding: 20px;
+    }
+
+    &.no-padding {
+      padding: 0;
+    }
+  }
+}
+

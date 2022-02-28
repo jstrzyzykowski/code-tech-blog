@@ -1,0 +1,14 @@
+.newsDetailed__comments-add {
+  margin-bottom: 30px;
+
+  button {
+    background-color: #77C900;
+
+    &:hover {
+      background-color: darken(
+              $color: #77C900,
+              $amount: 5
+      );
+    }
+  }
+}

@@ -1,0 +1,213 @@
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/variables';
+
+.navigationWrapper {
+  padding: 0 10px;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #3E3F51;
+  //background-color: #3E3E4D;
+  height: $menu-height;
+
+  @include lg-screen {
+    height: $menu-height-lg;
+    background-color: rgba(255,255,255,0.1);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+}
+
+.navigation {
+  height: 100%;
+  max-width: $page-max-width;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+  &__bars {
+    height: $burger-height;
+    width: $burger-width;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-light;
+    background-color: #2E2E3A;
+    cursor: pointer;
+
+    @include lg-screen {
+      display: none;
+    }
+
+    &.active {
+      .navigation__bars-bar {
+        margin: 0;
+      }
+
+      .navigation__bars-bar:nth-of-type(1) {
+        transform: translateY(100%) rotate(45deg);
+      }
+
+      .navigation__bars-bar:nth-of-type(2) {
+        opacity: 0;
+      }
+
+      .navigation__bars-bar:nth-of-type(3) {
+        transform: translateY(-100%) rotate(-45deg);
+      }
+    }
+
+    &-bar {
+      width: 24px;
+      height: 3px;
+      background-color: $color-gray;
+      margin: 5px 0;
+      transition: all 0.2s ease-out;
+    }
+
+    &:hover {
+      background-color: lighten($color: #2E2E3A, $amount: $hover-changer-value);
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: $menu-height;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: all 100ms ease-out;
+
+    @include lg-screen {
+      position: static;
+      transform: scaleY(1);
+      opacity: 1;
+      width: auto;
+      flex-grow: 1;
+
+      &-item {
+        width: 100px;
+      }
+    }
+
+    &.active {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+
+    &-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+
+      @include lg-screen {
+        flex-direction: row;
+      }
+    }
+
+    &-item {
+      height: $menu-height;
+
+      @include lg-screen {
+        height: $menu-height-lg;
+      }
+    }
+
+    &-link {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      color: #bcbcbc;
+      background-color: $bg-light;
+      background-color: #2E2E3A;
+      transition: all 0.1s ease-out;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      @include lg-screen {
+        background-color: unset;
+      }
+
+      &--soon {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        color: #696969;
+        //background-color: #353748;
+        background-color: $bg-light;
+        background-color: #2E2E3A;
+        text-transform: uppercase;
+        font-weight: bold;
+        position: relative;
+
+        @include lg-screen {
+          background-color: unset;
+        }
+
+        //&::before {
+        //  content: 'soon';
+        //  position: absolute;
+        //  top: 10%;
+        //  right: 35%;
+        //  background-color: #F55D6C;
+        //  color: whitesmoke;
+        //  font-size: 10px;
+        //  padding: 2px 8px;
+        //
+        //  @include lg-screen {
+        //    top: 20%;
+        //    right: -25%;
+        //  }
+        //}
+      }
+
+      &.active {
+        color: white;
+      }
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &__brand {
+    font-family: 'Bungee', cursive;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 21px;
+    color: $text-primary;
+    position: relative;
+
+    &-imageWrapper {
+      height: 30px;
+      width: 30px;
+      margin-right: 10px;
+      display: none;
+
+      @include lg-screen {
+        height: 40px;
+        width: 40px;
+        display: block;
+      }
+    }
+
+    @include lg-screen {
+      padding: 0 20px;
+      background-color: #2E3041;
+      background-color: #656570;
+      background-color: rgba(255,255,255,0.1);
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.pagination {
+  .paginationButtons {
+    margin-top: 50px;
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    li {
+      background-color: #6D60D3;
+      height: 40px;
+      width: 40px;
+      font-size: 18px;
+      transition: background-color 0.1s ease-out;
+
+      &:hover {
+        background-color: lighten(#6D60D3, 2);
+      }
+
+      a {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #bababa;
+        cursor: pointer;
+        //text-shadow: 0 1px 3px #2e3042;
+      }
+
+      a.previousButton {
+        color: white;
+      }
+
+      a.nextButton {
+        color: white;
+      }
+    }
+
+    li.paginationActive {
+      background-color: lighten(#6D60D3, 6);
+
+      a {
+        color: white;
+      }
+    }
+  }
+}

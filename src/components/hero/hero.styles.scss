@@ -1,0 +1,95 @@
+@import "../../sass/utilities/mixins";
+@import "../../sass/utilities/variables";
+
+.welcome {
+  height: 600px;
+  width: 100%;
+  background-image: url("../../assets/bg-new-6-1.webp");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-blend-mode: color-dodge;
+  //background-color: $bg-primary;
+  background-color: #30303D;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  //overflow-x: hidden;
+  //box-shadow: 0 20px 40px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 10px 40px 0 rgba(255,255,255,0.1);
+  //box-shadow: 0 10px 40px 0 rgba(61, 61, 73,0.1);
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
+
+    @include sm-screen {
+      transform: translate(-50%, -135%);
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      font-size: 42px;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 100%;
+      margin-bottom: 20px;
+
+      @include sm-screen {
+        font-size: 46px;
+      }
+
+      @include lg-screen {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      &-title {
+        @include lg-screen {
+          font-size: 46px;
+          display: flex;
+          align-items: flex-end;
+          margin-right: 14px;
+        }
+      }
+
+      &-color {
+        color: #6D60D3;
+        text-shadow: 0 0 10px #2E3041;
+
+        @include sm-screen {
+          align-items: flex-end;
+        }
+
+        @include lg-screen {
+          padding-bottom: 3px;
+          font-size: 56px;
+        }
+      }
+    }
+
+    &-subtitle {
+      font-size: 18px;
+      text-shadow: 0 0 10px #2E3041;
+
+      @include sm-screen {
+        font-size: 21px;
+      }
+
+      @include lg-screen {
+        font-size: 21px;
+      }
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+}

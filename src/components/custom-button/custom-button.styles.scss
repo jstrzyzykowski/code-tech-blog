@@ -1,0 +1,51 @@
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/variables';
+
+.customButton {
+  width: 100%;
+  height: 46px;
+  letter-spacing: 1px;
+  padding: 0 35px;
+  font-size: $font-size-small;
+  background-color: $color-violet;
+  color: $text-primary;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //text-shadow: 0 1px 3px #2e3042;
+  transition: background-color 150ms ease-out;
+
+  &:hover {
+    background-color: darken(
+      $color: $color-violet,
+      $amount: $hover-changer-value
+    );
+  }
+
+  &--inverted {
+    background-color: transparent;
+    color: $color-violet;
+    border: 2px solid $color-violet;
+
+    &:hover {
+      background-color: $color-violet;
+      color: $text-primary;
+      border: none;
+    }
+  }
+
+  &.green {
+    background-color: #77C900;
+    text-shadow: 0 1px 3px #2e3042;
+  }
+
+  @include sm-screen {
+    &--fluid {
+      width: 100%;
+    }
+
+    width: auto;
+  }
+}

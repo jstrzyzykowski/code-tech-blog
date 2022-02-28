@@ -1,0 +1,57 @@
+.streamListItem {
+  padding: 10px 16px 10px 10px;
+  background-color: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease-out;
+
+  &:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+
+  &__imageWrapper {
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #8f909b;
+
+    &.live {
+      border-color: #77C900;
+    }
+  }
+
+  &__body {
+    color: white;
+    padding-left: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    //justify-content: flex-end;
+    //margin-top: auto;
+
+    &-name {
+      font-size: 16px;
+      //line-height: 10px;
+    }
+
+    &-link {
+      font-size: 12px;
+      color: #ababab;
+    }
+  }
+
+  &__liveSignal {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #8F909B;
+
+    &.live {
+      background-color: #77C900;
+    }
+  }
+}

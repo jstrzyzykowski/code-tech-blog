@@ -1,0 +1,70 @@
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/variables';
+
+.lookingForItem {
+  background-color: rgba(255,255,255,0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.2s ease-out;
+  z-index: 0;
+
+  @include lg-screen {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+
+    @include lg-screen {
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    i {
+      width: 30px;
+      height: 30px;
+      background-color: $color-black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $color-gray;
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    .description {
+      flex-grow: 1;
+      color: $color-gray;
+    }
+  }
+
+  .destination {
+    display: flex;
+
+    .role {
+      font-size: 14px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      background-color: rgba(0,0,0,0.1);
+      margin-right: 7px;
+      color: $text-secondary;
+
+      &.active {
+        background-color: $color-violet;
+        color: $text-primary;
+      }
+    }
+  }
+}

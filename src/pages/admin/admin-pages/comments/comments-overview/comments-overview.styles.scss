@@ -1,0 +1,61 @@
+@import '../../../../../sass/utilities/mixins';
+
+.commentsOverview {
+  padding: 20px;
+
+  @include sm-screen {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include md-screen {
+    padding: 0;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
+  &__form {
+
+
+    @include sm-screen {
+      width: 50%;
+    }
+
+    @include md-screen {
+      width: 40%;
+    }
+
+    @include lg-screen {
+      width: 30%;
+    }
+
+    .formInput {
+      margin: 0 0 10px;
+
+      @include sm-screen {
+        //width: 200px;
+        //width: 70%;
+      }
+    }
+
+    &-submitButton {
+      height: 46px;
+      width: 100%;
+      background-color: #77C900;
+      border: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: white;
+      cursor: pointer;
+      //text-shadow: 0 1px 2px #2e3042;
+      transition: background-color 0.1s ease-out;
+
+      &:hover {
+        background-color: darken(#77C900, 4);
+      }
+    }
+  }
+}

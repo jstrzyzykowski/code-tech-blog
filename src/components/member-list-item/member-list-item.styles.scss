@@ -1,0 +1,135 @@
+@import "../../sass/utilities/mixins";
+
+.member {
+  display: flex;
+  //display: grid;
+  //grid-template-columns: 50px auto auto auto;
+  //column-gap: 20px;
+  align-items: center;
+  padding-right: 5px;
+  background-color: rgba(255,255,255,0.05);
+  height: 50px;
+  transition: background-color 0.2s ease-out;
+  //font-size: 12px;
+
+  &:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+
+  &__rowNumber {
+    width: 50px;
+    margin-right: 10px;
+    //width: 70px;
+    background-color: rgba(255,255,255,0.1);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //font-size: 18px;
+    font-size: 16px;
+
+    @include sm-screen {
+      font-size: 18px;
+      margin-right: 20px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+    justify-content: center;
+    flex-grow: 1;
+
+    @include sm-screen {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+
+    &-hierarchy {
+      background-color: #585969;
+      //padding: 0 8px;
+      padding: 0 4px;
+      //font-size: 14px;
+      font-size: 12px;
+      text-transform: capitalize;
+      align-self: flex-start;
+
+      @include sm-screen {
+        padding: 0 8px;
+        font-size: 14px;
+        align-self: unset;
+        //align-items: center;
+      }
+    }
+
+    &-nickname {
+      //font-size: 18px;
+      font-size: 16px;
+      font-weight: bold;
+
+      @include sm-screen {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+
+
+  &__media {
+    display: flex;
+    //flex-grow: 1;
+    //justify-content: flex-end;
+
+    &-item {
+      height: 40px;
+      width: 40px;
+      font-size: 24px;
+      background-color: #585969;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 2px;
+      transition: background-color 0.1s ease-out;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #6b6c80;
+      }
+    }
+  }
+
+  //Hierarchy Labels
+  &.governor {
+    .member__wrapper-hierarchy {
+      background-color: #4A37A0;
+    }
+  }
+
+  &.consul {
+    .member__wrapper-hierarchy {
+      background-color: #AF72D3;
+    }
+  }
+
+  &.officer {
+    .member__wrapper-hierarchy {
+      background-color: #4999DD;
+    }
+  }
+
+  &.settler {
+    .member__wrapper-hierarchy {
+      background-color: #4BA459;
+    }
+  }
+
+  &.recruit {
+    .member__wrapper-hierarchy {
+      background-color: #575869;
+    }
+  }
+}

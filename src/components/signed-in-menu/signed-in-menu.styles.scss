@@ -1,0 +1,148 @@
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/variables';
+
+.navigation {
+  &__user {
+    margin-left: auto;
+    cursor: pointer;
+    position: static;
+
+    @include lg-screen {
+      position: relative;
+    }
+
+    &-box {
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      height: $user-menu-height;
+      transition: background-color 0.2s ease-out;
+
+      @include lg-screen {
+        height: $user-menu-height-lg;
+      }
+
+      &-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+
+        @include lg-screen {
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      &-userInfo {
+        display: none;
+        padding-right: 15px;
+        //padding-left: 5px;
+        //margin-right: 10px;
+        font-size: $font-size-small;
+
+        @include lg-screen {
+          display: flex;
+          align-items: center;
+        }
+
+        &-name {
+          color: $color-gray;
+          //font-size: 16px;
+        }
+
+        &-hierarchy {
+          margin-left: 10px;
+          //display: block;
+          color: white;
+          padding: 1px 10px;
+          text-transform: capitalize;
+          //padding: ;
+          //border-radius: 3px;
+
+
+          //Hierarchy Labels
+          &.governor {
+            background-color: #4A37A0;
+          }
+
+          &.consul {
+            background-color: #AF72D3;
+          }
+
+          &.officer {
+            background-color: #4999DD;
+          }
+
+          &.settler {
+            background-color: #4BA459;
+          }
+
+          &.recruit {
+            background-color: #575869;
+          }
+
+          &.guest {
+            background-color: #e5e5e5;
+            color: #707070;
+            //font-weight: bold;
+            display: none;
+          }
+        }
+      }
+
+      i {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $color-gray;
+        transition: transform 0.2s ease-out;
+
+        @include lg-screen {
+          padding: 0 10px;
+        }
+      }
+
+      &.active {
+        i {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &-menu {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      overflow: hidden;
+      transform: scaleY(0);
+      opacity: 0;
+      transform-origin: top;
+      transition: all 150ms ease-out;
+
+      @include sm-screen {
+        width: 340px;
+      }
+
+      @include lg-screen {
+        right: 0;
+      }
+
+      &.active {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+
+      &-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/variables';
+
+.commentListItem {
+  //border-radius: $border-radius * 2;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.05);
+
+  @include sm-screen {
+    padding: 20px;
+  }
+
+  &__header {
+    display: flex;
+    margin-bottom: 20px;
+
+    &-avatar {
+      height: 42px;
+      width: 42px;
+      margin-right: 10px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      font-size: $font-size-small;
+    }
+
+    &-author {
+      font-size: 16px;
+      font-weight: bold;
+      color: $text-primary;
+    }
+
+    &-published {
+      color: $text-secondary;
+    }
+  }
+
+  &__body {
+    margin-bottom: 10px;
+
+    &-text {
+      font-size: $font-size-small;
+      color: $text-secondary;
+    }
+  }
+}

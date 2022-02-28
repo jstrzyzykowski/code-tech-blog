@@ -1,0 +1,27 @@
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/variables';
+
+.registerForm {
+  margin: 0 auto;
+  //background-color: $bg-light;
+  //background-color: $bg-light;
+  padding: 10px;
+  //z-index: 1;
+
+  @include sm-screen {
+    padding: 20px;
+  }
+
+  button {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    //color: #2E3041;
+    background-color: #77C900;
+    //font-size: 16px;
+
+    &:hover {
+      background-color: darken(#77C900, 6);
+    }
+  }
+}
